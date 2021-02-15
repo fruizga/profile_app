@@ -1,0 +1,11 @@
+<h2>Email: <%= @user.email %></h2>
+<h2>Username: "<%= @user.username %>"</h2>
+<h2>First Name: <%= @user.firstname %></h2>
+<h2>Last Name: "<%= @user.lastname %>"</h2>
+<h2>Bio: <%= @user.bio %></h2>
+<h2>Linkedin: "<%= @user.linkedin %>"</h2>
+<h2>Twitter: <%= @user.twitter %></h2>
+
+<div>
+  <%= link_to "Delete user", @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

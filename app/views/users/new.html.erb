@@ -1,0 +1,12 @@
+<h3>Create a User</h3>
+<%= form_for @user do |f| %>
+  <p>Email: <%= f.text_field :email, placeholder: "user@mail.com" %></p>
+  <p>Username: <%= f.text_field :username, placeholder: "username" %></p>
+  <p>First Name: <%= f.text_field :firstname, placeholder: "First name" %></p>
+  <p>Last Name: <%= f.text_field :lastname, placeholder: "Last name" %></p>
+  <p>Bio: <%= f.text_field :bio, placeholder: "Tell us about you" %></p>
+  <p>Linkedin: <%= f.text_field :linkedin, placeholder: "https://linkedin.com/in/prof" %></p>
+  <p>Twitter: <%= f.text_field :twitter, placeholder: "https://twitter.com/prof" %></p>
+  
+  <%= f.submit %>
+<% end %>
