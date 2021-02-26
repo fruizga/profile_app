@@ -6,11 +6,9 @@
 <h2>First Name:</h2><%= @user.firstname %>
 <h2>Last Name:</h2><%= @user.lastname %>
 <h2>Bio:</h2> <%= @user.bio %></h2>
-<h2>Linkedin:</h2> <%= @user.linkedin %>
-<h2>Twitter:</h2> <%= @user.twitter %>
 </div>
 <div>
-<%= button_to "All users", users_path, method: :get %>
-<%= button_to "Edit user", edit_user_path(@user), method: :get %>
-<%= button_to 'Delete user', user_path(@user), method: 'delete', data: { confirm: 'Are you sure?' } %>
+<%= link_to "All users", users_path %>
+<%= link_to "Edit user", edit_user_path(@user) %>
+<%= link_to 'Delete user', user_path(@user), method: 'delete', data: { confirm: 'Are you sure?' } %>
 </div>
