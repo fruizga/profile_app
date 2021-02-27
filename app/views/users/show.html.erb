@@ -9,10 +9,10 @@
 
   <div>
     <h2>Social network</h2> 
-    <% if @user.socials? %>
+    <% if @user.socials %>
       <ul>
-        <% @user.socials do |social| %>
-        <li><%= link_to social, social %></li> 
+        <% @user.socials.each do |social| %>
+        <li><%= link_to social.link, social %></li> 
         <% end %>
       </ul>
     <% else %>
