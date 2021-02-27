@@ -1,14 +1,28 @@
-<h1>User description </h1>
+<h1>User detail </h1>
 
 <div class="card" style="padding:15px;max-width:450px;">
-<h2>Email:</h2> <%= @user.email %>
-<h2>Username:</h2> <%= @user.username %>
-<h2>First Name:</h2><%= @user.firstname %>
-<h2>Last Name:</h2><%= @user.lastname %>
-<h2>Bio:</h2> <%= @user.bio %></h2>
+  <h2>Email:</h2> <%= @user.email %>
+  <h2>Username:</h2> <%= @user.username %>
+  <h2>First Name:</h2><%= @user.firstname %>
+  <h2>Last Name:</h2><%= @user.lastname %>
+  <h2>Bio:</h2> <%= @user.bio %></h2>
+
+  <div>
+    <h2>Social network</h2> 
+    <% if @user.socials? %>
+      <ul>
+        <% @user.socials do |social| %>
+        <li><%= link_to social, social %></li> 
+        <% end %>
+      </ul>
+    <% else %>
+      <p>There is not social registered</p>
+    <% end %>
+  </div>
 </div>
+
 <div>
-<%= link_to "All users", users_path %>
-<%= link_to "Edit user", edit_user_path(@user) %>
-<%= link_to 'Delete user', user_path(@user), method: 'delete', data: { confirm: 'Are you sure?' } %>
+  <%= link_to "All users", users_path %>
+  <%= link_to "Edit user", edit_user_path(@user) %>
+  <%= link_to 'Delete user', user_path(@user), method: 'delete', data: { confirm: 'Are you sure?' } %>
 </div>
