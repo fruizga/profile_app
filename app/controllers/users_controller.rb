@@ -11,6 +11,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.socials.build
+
   end
 
   def create
@@ -27,6 +29,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @user.socials.build
   end
 
   def update
@@ -49,7 +52,7 @@ class UsersController < ApplicationController
   
   
   def user_params
-    params.require(:user).permit(:email, :username, :firstname, :lastname, :bio)
+    params.require(:user).permit(:email, :username, :firstname, :lastname, :bio, socials_attributes: [:id,:name, :link, :user_id, :_destroy])
   end
   
 end

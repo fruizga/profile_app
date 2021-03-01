@@ -10,4 +10,22 @@
   <p>Bio: <%= f.text_field :bio,class: "form-control", placeholder: "Tell us about you" %></p>
    
   <%= f.submit %>
+
+
+   <h2>Socials</h2>
+ 
+  <%= f.fields_for :socials do | social | %>
+    <div class="card">
+      <div class="fields">
+        <%= social.label :name, "Name" %><br>
+        <%= social.text_field :name, class: "form-control" %>
+        <%= social.label :link, "Link" %><br>
+        <%= social.text_field :link, class: "form-control" %>
+        <%= social.check_box :_destroy %>
+        <%= social.label :_destroy, "Borrar" %>
+      </div>
+    </div>
+  <% end %>
 <% end %>
+
+ 
