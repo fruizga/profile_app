@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user)
+      
     else
       render :new
     end
@@ -52,7 +53,9 @@ class UsersController < ApplicationController
   
   
   def user_params
-    params.require(:user).permit(:email, :username, :firstname, :lastname, :bio, socials_attributes: [:id,:name, :link, :user_id, :_destroy])
+    #params.require(:user).permit(:email, :username, :firstname, :lastname, :bio, socials_attributes: [:id,:name, :link, :user_id, :_destroy])
+    params.require(:user).permit(:email, :username, :firstname, :lastname, :bio, socials_attributes: Social.attribute_names.map(&:to_sym).push(:_destroy))
+
   end
   
 end

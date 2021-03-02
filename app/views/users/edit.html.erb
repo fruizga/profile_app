@@ -1,32 +1,5 @@
 <h3>Modify a User</h3>
 
-<%= form_for @user do |f| %>
-  <%= @user.errors.full_messages if @user.errors.any? %>
-  <%= @user.socials.errors.full_messages if @user.errors.any? %>
+<%= render 'form' %>
 
-
-  <p>Email: <%= f.text_field :email,class: "form-control" %></p>
-  <p>Username: <%= f.text_field :username,class: "form-control" %></p>
-  <p>First Name: <%= f.text_field :firstname,class: "form-control" %></p>
-  <p>Last Name: <%= f.text_field :lastname,class: "form-control" %></p>
-  <p>Bio: <%= f.text_field :bio,class: "form-control" %></p>
-    
-  <%= f.submit %>
-
-
- <h2>Socials</h2>
- 
-  <%= f.fields_for :socials do | social | %>
-    <div class="card">
-      <div class="fields">
-        <%= social.label :name, "Name" %><br>
-        <%= social.text_field :name, class: "form-control" %>
-        <%= social.label :link, "Link" %><br>
-        <%= social.text_field :link, class: "form-control" %>
-        <%= social.check_box :_destroy %>
-        <%= social.label :_destroy, "Borrar" %>
-      </div>
-    </div>
-  <% end %>
-
-<% end %>
+<%= link_to 'Cancel and return to users listing', users_path %>
