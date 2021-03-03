@@ -9,8 +9,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
-import {Application} from 'Stimulus'
-import { definitionsFromContext} from 'stimulus/webpack-helpers'
+import {Application} from 'stimulus'
+require("jquery")
 
 
 Rails.start()
