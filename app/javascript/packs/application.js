@@ -3,15 +3,22 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails, { $ } from "@rails/ujs";
-import 'cocoon';
-import Turbolinks from "turbolinks";
-import * as ActiveStorage from "@rails/activestorage";
-import "channels";
+import Rails, { $ } from "@rails/ujs"
+import 'cocoon'
+import Turbolinks from "turbolinks"
+import * as ActiveStorage from "@rails/activestorage"
+import "channels"
+import "bootstrap"
+import {Application} from 'Stimulus'
+import { definitionsFromContext} from 'stimulus/webpack-helpers'
 
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+const application = Application.start()
+const context = require.comtext('../controllers', true, /\.js$/)
+application.load(definitionsFromContext(context))
 
 

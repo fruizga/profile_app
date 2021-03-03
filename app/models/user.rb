@@ -9,6 +9,5 @@ class User < ApplicationRecord
   validates :firstname, presence: true
   validates :lastname, presence: true
   validates :bio, presence: true        
-  validates_associated :socials
-        
+  validates_associated :socials        
 end

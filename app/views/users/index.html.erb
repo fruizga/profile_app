@@ -1,13 +1,4 @@
 <h1>USER ACCOUNT MANAGEMNT</h1>
-<!--
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.username,  user_path(user) %></li>
-  <% end %>
-</ul>
--->
-
-
   <% @users.each do |user| %>
     <div class="card" style="padding:15px;max-width:450px;">
       <h2><%= user.firstname + " " + user.lastname %></h2>
@@ -16,5 +7,4 @@
       <%= link_to 'Delete', user_path(user), method: 'delete', data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
-
 <%= link_to "Add a New User", new_user_path %>

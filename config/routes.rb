@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users
-  resources :socials
+  resources :socials, only: [:show]
   
   root to: "users#index"
 end

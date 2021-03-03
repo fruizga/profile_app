@@ -1,11 +1,10 @@
-<div class="nested-fields">
-  <div class="field">
-    <%= f.label :name%>
-    <%= f.text_field :name%>
-
-    <%= f.label :link%>
-    <%= f.text_field :link%>
-
-    <%= link_to_remove_association "Remove social", f %>
+<div class='nested-fields'>
+  <div class='form-group'>
+    <%= form.hidden_field :_destroy %>
+    <%= form.text_field :name, placeholder: 'name', class: 'form-control' %>
+    <%= form.text_field :link, placeholder: 'link', class: 'form-control' %>
+    <small>
+      <%= link_to "Remove", "#", data: { action: "click->nested-form#remove_association" } %>
+    </small>  
   </div>
 </div>
