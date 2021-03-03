@@ -11,14 +11,14 @@ import "channels"
 import "bootstrap"
 import {Application} from 'stimulus'
 require("jquery")
+require("./nested-forms/addFields");
+require("./nested-forms/removeFields");
 
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-const application = Application.start()
-const context = require.comtext('../controllers', true, /\.js$/)
-application.load(definitionsFromContext(context))
-
-
+//const application = Application.start()
+//const context = require.comtext('../controllers', true, /\.js$/)
+//application.load(definitionsFromContext(context))

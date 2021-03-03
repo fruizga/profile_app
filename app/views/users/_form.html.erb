@@ -14,29 +14,16 @@
   <p>Last Name: <%= form.text_field :lastname,class: "form-control" %></p>
   <p>Bio: <%= form.text_field :bio,class: "form-control" %></p>    
   
- <h2>Socials</h2>
 
-  <div data-controller="nested-form">
-    <template data-target='nested-form.template'>
-      <%= form.fields_for :socials, Social.new, child_index: 'TEMPLATE_RECORD' do |social|%>
-        <%= render 'social_fields', form: social %>
-      <% end %>
-    </template>
-    <div data-target="nested-form.add_item">
-    <%= link_to "Add social", "#", data: { action: "nested-form#add_association" } %>
-  </div>
-    <%= form.fields_for :socials do |social| %>
-        <%= render 'social_fields', form: social %>
-    <% end %>
-  </div>    
-  
-  <%#= form.fields_for :socials do |social| %>
-    <%#= render 'social_fields', f: social %> 
-      
-  <%# end %>
-  <div class="links">
-    <%#= link_to_add_association "Add social", form, :socials, data: {association_insertion_node: '.socials', association_insertion_method: :append} %>
-    </div> 
+
+  <fieldset>
+        <legend>Socials:</legend>
+        <%= form.fields_for :socials do |social_form| %>
+            <%= render "social_fields", form: social_form %>
+        <% end %>
+        <%= link_to_add_fields "Add socials", form, :socials %>
+    </fieldset>  
+   <br>
   <div class="form-actions">
     <%= form.submit %>      
   </div>  
